@@ -13,4 +13,14 @@ import {NgOptimizedImage} from '@angular/common';
 export class UserComponent {
   randomIndex = Math.floor(Math.random() * (DUMMY_USERS.length));
   selectedUser = DUMMY_USERS[this.randomIndex];
+
+
+  get imagePath() {
+    return '../../assets/users/' + this.selectedUser.avatar;
+  }
+
+  onUserSelected() {
+    this.randomIndex = Math.floor(Math.random() * (DUMMY_USERS.length));
+    this.selectedUser = DUMMY_USERS[this.randomIndex];
+  }
 }
