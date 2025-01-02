@@ -8,8 +8,8 @@ import {DUMMY_USERS} from '../dummy-users';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input() userName!: string;
-  @Input() avatar!: string;
+  @Input({required: true}) userName!: string;
+  @Input({required: true}) avatar!: string;
 
   get imagePath() {
     return '../../assets/users/' + this.avatar;
