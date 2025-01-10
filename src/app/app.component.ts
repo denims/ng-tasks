@@ -13,5 +13,9 @@ import {NgForOf} from "@angular/common";
 export class AppComponent {
   users = DUMMY_USERS;
   title = 'deni-2';
+
+  onUserSelected(userId: string) {
+    console.log(userId);
+  }
 }
 
