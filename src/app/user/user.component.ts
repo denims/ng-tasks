@@ -1,4 +1,4 @@
-import {Component, computed, Input, signal} from '@angular/core';
+import {Component, computed, input, Input, signal} from '@angular/core';
 import {DUMMY_USERS} from '../dummy-users';
 
 @Component({
@@ -9,11 +9,9 @@ import {DUMMY_USERS} from '../dummy-users';
 })
 export class UserComponent {
   @Input({required: true}) userName!: string;
-  @Input({required: true}) avatar!: string;
+  avatar = input.required<string>();
+  imagePath = computed(() => '../../assets/users/' + this.avatar());
 
-  get imagePath() {
-    return '../../assets/users/' + this.avatar;
-  }
 
 
   onUserSelected() {
